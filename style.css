@@ -4,4 +4,54 @@
 
 body {
     background-color: blanchedalmond;
+    display:flex;
+    justify-content: center;
+    height: 100vh;
 }
+
+.container {
+    border-style: solid;
+    width: 300px;
+    height: 400px;
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(0, 0%, 30%);
+}
+
+.output {
+    background-color: hsl(0, 0%, 40%);
+    height: 100px;
+}
+.input {
+    background-color: hsl(0, 0%, 30%);
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    padding: 10px;
+}
+
+button {
+    height: 50px;
+    width: 60px;
+    border-radius: 10px;
+    background-color: hsl(0, 0%, 50%);
+}
+
+#backspace {
+    width: 190px;
+    background-color: orange;
+}
+
+.number {
+    background-color: hsl(0, 0%, 50%);
+}
+
+.operator {
+    background-color: hsl(39, 100%, 50%);
+}
+
+
