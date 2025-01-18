@@ -10,9 +10,9 @@ input.addEventListener('click', (event) => {
             output.textContent = "0";
             break;
         case 'delete':
-            if (output.textContent != "0"){
+            if (output.textContent.length != 1){
                 output.value = output.value.slice(0, -1);
-            }
+            } else output.textContent = "0";
             break;
         case '1':
             if (output.textContent != "0"){
