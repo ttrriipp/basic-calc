@@ -7,40 +7,89 @@ input.addEventListener('click', (event) => {
 
     switch(target.id) {
         case 'clear':
-            output.textContent = "";
+            output.textContent = "0";
             break;
         case 'delete':
-            output.value = output.value.slice(0, -1);
+            if (output.textContent != "0"){
+                output.value = output.value.slice(0, -1);
+            }
             break;
         case '1':
-            output.textContent += "1";
+            if (output.textContent != "0"){
+                output.textContent += "1";
+            } else {
+                output.value = output.value.slice(0, -1);
+                output.textContent += "1";
+            }
             break;
         case '2':
-            output.textContent += "2";
+            if (output.textContent != "0"){
+                output.textContent += "2";
+            } else {
+                output.value = output.value.slice(0, -1);
+                output.textContent += "2";
+            }           
             break;
         case '3':
-            output.textContent += "3";
+            if (output.textContent != "0"){
+                output.textContent += "3";
+            } else {
+                output.value = output.value.slice(0, -1);
+                output.textContent += "3";
+            }                                 
             break;
         case '4':
-            output.textContent += "4";
+               if (output.textContent != "0"){
+                output.textContent += "4";
+            } else {
+                output.value = output.value.slice(0, -1);
+                output.textContent += "4";
+            }
             break;
         case '5':
-            output.textContent += "5";
+               if (output.textContent != "0"){
+                output.textContent += "5";
+            } else {
+                output.value = output.value.slice(0, -1);
+                output.textContent += "5";
+            }
             break;
         case '6':
-            output.textContent += "6";
+               if (output.textContent != "0"){
+                output.textContent += "6";
+            } else {
+                output.value = output.value.slice(0, -1);
+                output.textContent += "6";
+            }            
             break;
         case '7':
-            output.textContent += "7";
+               if (output.textContent != "0"){
+                output.textContent += "7";
+            } else {
+                output.value = output.value.slice(0, -1);
+                output.textContent += "7";
+            }            
             break;
         case '8':
-            output.textContent += "8";
+            if (output.textContent != "0"){
+                output.textContent += "8";
+            } else {
+                output.value = output.value.slice(0, -1);
+                output.textContent += "8";
+            };
             break;
         case '9':
-            output.textContent += "9";
+            if (output.textContent != "0"){
+                output.textContent += "9";
+            } else {
+                output.value = output.value.slice(0, -1);
+                output.textContent += "9";
+            }            
             break;
         case '0':
-            output.textContent += "0";
+            if (output.textContent != "0"){
+                output.textContent += "0";
+            }             
             break;
         case 'equal':
             alert(output.value);
