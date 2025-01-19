@@ -158,6 +158,8 @@ function operate (equation) {
         answer = add(equation);
     } else if (equation.includes('-')){
         answer = subtract(equation);
+    } else if (equation.includes('×')){
+        answer = multiply(equation);
     }
     return answer;
 }
@@ -173,6 +175,12 @@ function subtract (equation) {
     equation = equation.split('-');
     const difference = Number(equation[0]) - Number(equation[1]);
     return difference;
+}
+
+function multiply (equation) {
+    equation = equation.split('×');
+    const product = Number(equation[0]) * Number(equation[1]);
+    return product;
 }
 
 
