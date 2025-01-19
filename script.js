@@ -103,7 +103,10 @@ input.addEventListener('click', (event) => {
             }             
             break;
         case 'equal':
-            output.textContent = operate(output.value);
+            const equation = output.value.split(operator);
+            if (outputIncludesOperators() && equation[1] != ""){
+                output.textContent = operate(output.value);
+            }
             answered = output.value;
             break;
         case '+':
