@@ -160,6 +160,8 @@ function operate (equation) {
         answer = subtract(equation);
     } else if (equation.includes('×')){
         answer = multiply(equation);
+    } else if (equation.includes('÷')){
+        answer = divide(equation);
     }
     return answer;
 }
@@ -181,6 +183,12 @@ function multiply (equation) {
     equation = equation.split('×');
     const product = Number(equation[0]) * Number(equation[1]);
     return product;
+}
+
+function divide (equation) {
+    equation = equation.split('÷');
+    const quotient = Number(equation[0]) / Number(equation[1]);
+    return quotient;
 }
 
 
