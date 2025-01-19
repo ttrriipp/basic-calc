@@ -156,6 +156,8 @@ function operate (equation) {
     let answer;
     if (equation.includes('+')){
         answer = add(equation);
+    } else if (equation.includes('-')){
+        answer = subtract(equation);
     }
     return answer;
 }
@@ -163,8 +165,14 @@ function operate (equation) {
 
 function add (equation) {
     equation = equation.split('+');
-    sum  = Number(equation[0]) + Number(equation[1]);
+    const sum  = Number(equation[0]) + Number(equation[1]);
     return sum;
+}
+
+function subtract (equation) {
+    equation = equation.split('-');
+    const difference = Number(equation[0]) - Number(equation[1]);
+    return difference;
 }
 
 
