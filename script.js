@@ -3,6 +3,7 @@ const output = document.querySelector('output');
 const input = document.querySelector('.input');
 
 let answered;
+let operator;
 input.addEventListener('click', (event) => {
     let target = event.target;
 
@@ -104,7 +105,6 @@ input.addEventListener('click', (event) => {
         case 'equal':
             output.textContent = operate(output.value);
             answered = output.value;
-            console.log(operate(output.value));
             break;
         case '+':
             if (!outputIncludesOperators()){
@@ -113,6 +113,7 @@ input.addEventListener('click', (event) => {
                 output.value = output.value.slice(0, -1);
                 output.textContent += "+";
             }
+            operator = "+";
             break;
         case '-':
             if (!outputIncludesOperators()){
@@ -121,6 +122,7 @@ input.addEventListener('click', (event) => {
                 output.value = output.value.slice(0, -1);
                 output.textContent += "-";
             }
+            operator = "-";
             break;
         case '*':
             if (!outputIncludesOperators()){
@@ -129,6 +131,7 @@ input.addEventListener('click', (event) => {
                 output.value = output.value.slice(0, -1);
                 output.textContent += "×";
             }
+            operator = "×";
             break;
         case '/':
             if (!outputIncludesOperators()){
@@ -137,9 +140,13 @@ input.addEventListener('click', (event) => {
                 output.value = output.value.slice(0, -1);
                 output.textContent += "÷";
             }
+            operator = "÷";
             break;
         case 'decimal':
-            if (!output.value.includes('.')){
+            let preEquation = output.value.split(operator);
+            if (!preEquation[0].includes('.')){
+                output.textContent += ".";
+            } else if (!preEquation[1].includes('.')){
                 output.textContent += ".";
             }
             break; 
@@ -151,7 +158,6 @@ function clearAfterOperation () {
         output.textContent = "0";
     }
 }
-
 
 function operate (equation) {
     let answer;
