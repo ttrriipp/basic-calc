@@ -92,7 +92,7 @@ input.addEventListener('click', (event) => {
             }             
             break;
         case 'equal':
-            alert(output.value);
+            output.textContent = operate(output.value);
             break;
         case '+':
             if (!outputIncludesOperators()){
@@ -133,6 +133,22 @@ input.addEventListener('click', (event) => {
             break; 
     }
 });
+
+function operate (equation) {
+    let answer;
+    if (equation.includes('+')){
+        answer = add(equation);
+    }
+    return answer;
+}
+
+
+function add (equation) {
+    equation = equation.split('+');
+    sum  = Number(equation[0]) + Number(equation[1]);
+    return sum;
+}
+
 
 function outputIncludesOperators (){
     return output.value.includes('+') ? true : 
