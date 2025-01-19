@@ -104,6 +104,7 @@ input.addEventListener('click', (event) => {
         case 'equal':
             output.textContent = operate(output.value);
             answered = output.value;
+            console.log(operate(output.value));
             break;
         case '+':
             if (!outputIncludesOperators()){
@@ -187,6 +188,8 @@ function multiply (equation) {
 
 function divide (equation) {
     equation = equation.split('÷');
+    if (Number(equation[1]) == 0) return "ERROR";
+    
     const quotient = Number(equation[0]) / Number(equation[1]);
     return quotient;
 }
