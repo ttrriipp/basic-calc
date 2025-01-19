@@ -97,21 +97,32 @@ input.addEventListener('click', (event) => {
         case '+':
             if (!outputIncludesOperators()){
                 output.textContent += "+";
-            } else
-
+            } else {
+                output.value = output.value.slice(0, -1);
+                output.textContent += "+";
+            }
             break;
         case '-':
             if (!outputIncludesOperators()){
+                output.textContent += "-";
+            } else {
+                output.value = output.value.slice(0, -1);
                 output.textContent += "-";
             }
             break;
         case '*':
             if (!outputIncludesOperators()){
                 output.textContent += "×";
-            } 
+            } else {
+                output.value = output.value.slice(0, -1);
+                output.textContent += "×";
+            }
             break;
         case '/':
             if (!outputIncludesOperators()){
+                output.textContent += "÷";
+            } else {
+                output.value = output.value.slice(0, -1);
                 output.textContent += "÷";
             }
             break;
@@ -119,9 +130,7 @@ input.addEventListener('click', (event) => {
             if (!output.value.includes('.')){
                 output.textContent += ".";
             }
-            break;
-        
-            
+            break; 
     }
 });
 
