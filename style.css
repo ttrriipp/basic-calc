@@ -36,16 +36,20 @@ output {
     width: 100%; 
     font-size: 60px;
     text-align: end;
+    color: white;
 }
 
 .input {
     background-color: hsl(0, 0%, 30%);
     height: 300px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    justify-content: center;
     padding: 10px;
+}
+
+.left, .right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
 button {
@@ -53,23 +57,35 @@ button {
     width: 65px;
     border-radius: 10px;
     background-color: hsl(0, 0%, 50%);
+    color: white;
+    font-weight: bold;
 }
 
-#delete {
-    width: 205px;
-    background-color: orange;
+button:hover {
+    cursor:pointer;
 }
 
 .number {
     background-color: hsl(0, 0%, 50%);
 }
 
-.operator {
+[id="0"] {
+    width: 135px;
+
+}
+
+.operator, #clear {
     background-color: hsl(39, 100%, 50%);
+}
+
+#delete {
+    background-color: red;
 }
 
 #equal {
     background-color: hsl(39, 100%, 50%);
+    height: 100px;
+    
 }
 
 
