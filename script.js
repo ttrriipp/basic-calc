@@ -2,6 +2,7 @@ const output = document.querySelector('output');
 
 const input = document.querySelector('.input');
 
+let answered;
 input.addEventListener('click', (event) => {
     let target = event.target;
 
@@ -15,6 +16,7 @@ input.addEventListener('click', (event) => {
             } else output.textContent = "0";
             break;
         case '1':
+            clearAfterOperation();
             if (output.textContent != "0"){
                 output.textContent += "1";
             } else {
@@ -23,6 +25,7 @@ input.addEventListener('click', (event) => {
             }
             break;
         case '2':
+            clearAfterOperation();
             if (output.textContent != "0"){
                 output.textContent += "2";
             } else {
@@ -31,6 +34,7 @@ input.addEventListener('click', (event) => {
             }           
             break;
         case '3':
+            clearAfterOperation();
             if (output.textContent != "0"){
                 output.textContent += "3";
             } else {
@@ -39,6 +43,7 @@ input.addEventListener('click', (event) => {
             }                                 
             break;
         case '4':
+            clearAfterOperation();
                if (output.textContent != "0"){
                 output.textContent += "4";
             } else {
@@ -47,6 +52,7 @@ input.addEventListener('click', (event) => {
             }
             break;
         case '5':
+            clearAfterOperation();
                if (output.textContent != "0"){
                 output.textContent += "5";
             } else {
@@ -55,6 +61,7 @@ input.addEventListener('click', (event) => {
             }
             break;
         case '6':
+            clearAfterOperation();
                if (output.textContent != "0"){
                 output.textContent += "6";
             } else {
@@ -63,6 +70,7 @@ input.addEventListener('click', (event) => {
             }            
             break;
         case '7':
+            clearAfterOperation();
                if (output.textContent != "0"){
                 output.textContent += "7";
             } else {
@@ -71,6 +79,7 @@ input.addEventListener('click', (event) => {
             }            
             break;
         case '8':
+            clearAfterOperation();
             if (output.textContent != "0"){
                 output.textContent += "8";
             } else {
@@ -79,6 +88,7 @@ input.addEventListener('click', (event) => {
             };
             break;
         case '9':
+            clearAfterOperation();
             if (output.textContent != "0"){
                 output.textContent += "9";
             } else {
@@ -93,6 +103,7 @@ input.addEventListener('click', (event) => {
             break;
         case 'equal':
             output.textContent = operate(output.value);
+            answered = output.value;
             break;
         case '+':
             if (!outputIncludesOperators()){
@@ -133,6 +144,13 @@ input.addEventListener('click', (event) => {
             break; 
     }
 });
+
+function clearAfterOperation () {
+    if (output.textContent == answered) {
+        output.textContent = "0";
+    }
+}
+
 
 function operate (equation) {
     let answer;
